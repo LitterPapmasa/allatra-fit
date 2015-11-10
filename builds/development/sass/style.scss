@@ -1,0 +1,103 @@
+// All Our Dependencies
+@import "../libs/bootstrap/css/bootstrap.css";
+@import "../libs/bootstrap-material-design/css/roboto.css";
+@import "../libs/bootstrap-material-design/css/material-fullpalette.css";
+@import "../libs/bootstrap-material-design/css/ripples.css";
+//=== === ===
+// Our SASS Files
+@import "includes/varibles";
+@import "includes/mixins";
+@import "includes/stack";
+// Some Styles...
+body {
+  width: 100%;
+  height: 100%;
+  font-size: $font-size-base;
+  background: #fff;
+}
+
+
+.middle-box {
+max-width: 600px;
+min-width: 300px;
+height:200px;
+padding-top: calc(50vh - 276px);
+margin-left:auto;
+margin-right:auto;
+text-align: center;
+}
+
+@media (min-width: 513px) {
+
+  .middle-box {
+    padding-top: calc(50vh - 222px);
+  }
+}
+
+// Navigation3
+
+.clearfix .nav > li > a {
+  margin-top: 35px;
+}
+
+// Sign in
+
+.modal-body input {
+  padding: 10px;
+  margin-top: 20px;
+}
+// About
+
+.text-tab p {
+    text-indent: 1.5em;
+    text-align: justify;
+}
+// Practice
+
+.profile-bg {
+  position: relative;
+    background-image: url(/img/profile-bg.jpg);
+    background-position: 100% 0%;
+    height: 30vh;
+
+    margin: 0;
+    padding: 0;
+}
+
+.profile-logo img{
+  position: relative;
+  top: -120px;
+  left: 5vw;
+  width: 200px;
+  height: 200px;
+  border: 1px solid #fff;
+  box-shadow: 0 0 10px rgba(0,0,0,0.5);
+
+}
+
+.nav-with-logo ul {
+  margin-left: 7vw;
+}
+
+.lets-below {
+  padding-top: 40px;
+
+}
+
+.container-profile {
+  margin: auto;
+  width: 88vw;
+}
+
+// Navigation 3
+
+
+.profile-small-logo img{
+  position: relative;
+  //top: 30px;
+  left: 1.5vw;
+  border: 10px solid #fff;
+  border-radius: 50px;
+  margin-right: 1.5vw;
+ box-shadow: 0 0 10px rgba(0,0,0,0.5);
+}
