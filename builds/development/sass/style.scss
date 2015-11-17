@@ -46,6 +46,11 @@ text-align: center;
   padding: 10px;
   margin-top: 20px;
 }
+
+.modal-content {
+  left: calc((50% - 100px));
+  width: 200px;
+}
 // About
 
 .text-tab p {
@@ -101,3 +106,9 @@ text-align: center;
   margin-right: 1.5vw;
  box-shadow: 0 0 10px rgba(0,0,0,0.5);
 }
+
+.navbar .navbar-nav > li.active > a {
+ color: #fff;
+ background: rgba(255, 255, 255, 0.2);
+}
+

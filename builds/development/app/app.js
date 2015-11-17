@@ -6,11 +6,15 @@ $.material.init();
 	'use strict';
 	// Create module ngFit and use ngRoute
 	angular
-		.module('ngFit', ['ngRoute'])
+		.module('ngFit', [
+											'ngRoute',
+											'ngFit.navbar',
+											'ngFit.contacts'
+		])
 		.config(ngFitConfig)
 		.controller('MainCtrl', MainCtrl)
 		.controller('AboutCtrl', AboutCtrl)
-		.controller('ContactsCtrl', ContactsCtrl)
+		//.controller('ContactsCtrl', ContactsCtrl)
 		.controller('PracticeCtrl', PracticeCtrl)
 		.controller('ExercisesCtrl', ExercisesCtrl)
 		.controller('ProfileCtrl', ProfileCtrl)
@@ -24,32 +28,36 @@ $.material.init();
 				controller : 'MainCtrl'
 			})
 			.when('/about',{
-				templateUrl: '/views/about.html',
+				templateUrl: '/app/components/about/about.html',
 				controller : 'AboutCtrl'
 			})
-			.when('/contacts',{
-				templateUrl: '/views/contacts.html',
-				controller : 'ContactsCtrl'
-			})
 			.when('/practice',{
-				templateUrl: '/views/practice.html',
+				templateUrl: '/app/components/practice/practice.html',
 				controller : 'PracticeCtrl'
 			})
 			.when('/exercises',{
-				templateUrl: '/views/exercises.html',
+				templateUrl: '/app/components/exercises/exercises.html',
 				controller : 'ExercisesCtrl'
 			})
 			.when('/profile',{
-				templateUrl: '/views/profile.html',
+				templateUrl: '/app/components/profile/profile.html',
 				controller : 'ProfileCtrl'
 			})
 			.when('/statistic',{
-				templateUrl: '/views/statistic.html',
+				templateUrl: '/app/components/statistic/statistic.html',
 				controller : 'StatisticCtrl'
 			});
 	}
 
-	function MainCtrl($scope)
+	MainCtrl.$inject = ['$scope', '$rootScope'];
+	AboutCtrl.$inject = ['$scope', '$rootScope'];
+
+	PracticeCtrl.$inject = ['$scope', '$rootScope'];
+	ExercisesCtrl.$inject = ['$scope', '$rootScope'];
+	ProfileCtrl.$inject = ['$scope', '$rootScope'];
+	StatisticCtrl.$inject = ['$scope', '$rootScope'];
+
+	function MainCtrl($scope, $rootScope)
 	{
 		$scope.title = "Our home page";
 		$scope.name = "Vyacheslav Aleksandrovich";
@@ -58,34 +66,30 @@ $.material.init();
 		}
 	};
 
-	function AboutCtrl($scope)
+	function AboutCtrl($scope, $rootScope)
 	{
 		$scope.title = "Our home page";
 	};
 
-	function ContactsCtrl($scope)
+
+	function PracticeCtrl($scope, $rootScope)
 	{
-		$scope.title = "Our home page";
+		$rootScope.curPage = 'practice';
 	};
 
-	function PracticeCtrl($scope)
+	function ExercisesCtrl($scope, $rootScope)
 	{
-
+		$rootScope.curPage = 'exercises';
 	};
 
-	function ExercisesCtrl($scope)
+	function ProfileCtrl($scope, $rootScope)
 	{
-
+		$rootScope.curPage = 'profile';
 	};
 
-	function ProfileCtrl($scope)
+	function StatisticCtrl($scope, $rootScope)
 	{
-
-	};
-
-	function StatisticCtrl($scope)
-	{
-
+		$rootScope.curPage = 'statistic';
 	};
 
 

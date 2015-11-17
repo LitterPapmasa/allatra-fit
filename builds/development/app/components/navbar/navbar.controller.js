@@ -1,3 +1,1 @@
-/**
- * Created by szaharov on 28/05/15.
- */
+angular.module('ngFit.navbar', ['ngRoute']);
